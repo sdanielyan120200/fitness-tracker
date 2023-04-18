@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <div class="icons">
+        <div class="logo">
+            <a routerLink="/">
+                <mat-icon>self_improvement</mat-icon>
+                <span>FitTrack</span>
+            </a>
+        </div>
+    </div>
+    <div class="nav_list">
+        <ul class="nav_items">
+            <li *ngIf="!(isAuth$ | async)"><a routerLink="/signup">Signup</a></li>
+            <li *ngIf="!(isAuth$ | async)"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isAuth$ | async"><a routerLink="/training">Training</a></li>
+            <li *ngIf="isAuth$ | async"><a (click)="onLogout()" routerLink="/">Logout</a></li>
+        </ul>
+        <div class="burger_menu">
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>

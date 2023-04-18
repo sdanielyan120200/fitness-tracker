@@ -1,0 +1,6 @@
+<section class="spinner_container">
+    <mat-progress-spinner mode="determinate" [value]="progress" color="accent"></mat-progress-spinner>
+    <h1> {{ progress }}% </h1>
+    <p>Hard work always pays off!</p>
+    <button mat-raised-button color="warn" (click)="onStop()">Stop</button>
+</section>

@@ -1,0 +1,16 @@
+<section class="login_form">
+    <form class="column" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="column_item">
+            <input type="email" matInput placeholder="Your email." formControlName="email">
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Field must not be empty.</mat-error>
+            <mat-error *ngIf="!loginForm.get('email')?.hasError('required')">E-Mail is invalid!</mat-error>
+        </mat-form-field>
+        <mat-form-field class="column_item">
+            <input type="password" matInput placeholder="Your password." formControlName="password">
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Missing password.</mat-error>
+        </mat-form-field>
+        <button *ngIf="!(isLoading$ | async)" class="submit_button" mat-raised-button color="primary" type="submit"
+            [disabled]="loginForm.invalid">Login</button>
+        <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
+    </form>
+</section>

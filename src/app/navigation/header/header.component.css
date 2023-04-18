@@ -1,0 +1,45 @@
+a {
+    text-decoration: none;
+    color: white;
+    padding: 2%;
+}
+
+a:hover, a:active {
+    color: lightgray;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+.nav_items {
+    display: flex;
+    list-style: none;
+    margin-right: 10px;
+    align-self: baseline;
+} 
+
+.burger_menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav_items{
+        display: none;
+    }
+
+    .burger_menu {
+        display: block;
+    }
+}
+
+li {
+    padding-right: 10px ;
+}
+
+.icons {
+    display: flex;
+}
+
+.logo {
+    align-self: center;
+}
